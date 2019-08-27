@@ -4,7 +4,7 @@
 // files/jillys-sonar.wav
 // files/juskiddink__boing.wav
 
-package main
+package boing
 
 
 import (

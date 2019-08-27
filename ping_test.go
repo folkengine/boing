@@ -1,4 +1,4 @@
-package main
+package boing
 
 import "testing"
 
@@ -11,5 +11,8 @@ func TestPing(t *testing.T) {
 	})
 	t.Run("Ping", func(t *testing.T) {
 		Ping()
+	})
+	t.Run("Tone", func(t *testing.T) {
+		Tone()
 	})
 }

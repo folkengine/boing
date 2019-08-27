@@ -14,7 +14,7 @@ all: test build
 build:
 		$(GOBUILD) -o $(BINARY_NAME) -v
 install:
-		$(GOINSTALL)
+		cd $(BINARY_NAME); $(GOINSTALL); cd ../
 bi: build install
 test:
 		$(GOTEST) -v ./...

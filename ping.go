@@ -1,4 +1,4 @@
-package main
+package boing
 
 import (
 	"fmt"
@@ -12,19 +12,20 @@ import (
 )
 
 func getDir() string {
-	dir, err := os.Getwd()
-	if err != nil {
-		log.Fatal(err)
+	env, hasGoPath := os.LookupEnv("GOPATH")
+	if !hasGoPath {
+		panic("GOPATH not set.")
 	}
-	return dir
+	return fmt.Sprintf("%s/src/github.com/folkengine/boing", env)
 }
 
 const Sonar1 = "/files/jillys-sonar.wav"
 const Klaxon1 = "/files/danielnieto7__alert.wav"
-const Boing1 = "/files/juskiddink__boing.wav"
+const MouthHarp = "/files/juskiddink__boing.wav"
+const Tone1 = "/files/A-Tone-His_Self-1266414414.wav"
 
 func Boing() {
-	Play(Boing1)
+	Play(MouthHarp)
 }
 
 func Klaxon() {
@@ -33,6 +34,10 @@ func Klaxon() {
 
 func Ping() {
 	Play(Sonar1)
+}
+
+func Tone() {
+	Play(Tone1)
 }
 
 func Play(wave string) {
@@ -60,10 +65,4 @@ func Play(wave string) {
 	})))
 
 	<-done
-}
-
-func main() {
-	Boing()
-	Ping()
-	Klaxon()
 }
