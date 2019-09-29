@@ -19,15 +19,19 @@ func getDir() string {
 	return fmt.Sprintf("%s/src/github.com/folkengine/boing", env)
 }
 
-const Sonar1 = "/files/jillys-sonar.wav"
+const Chicken3 = "/files/chicken_3.wav"
 const Klaxon1 = "/files/danielnieto7__alert.wav"
 const MouthHarp = "/files/juskiddink__boing.wav"
+const Sonar1 = "/files/jillys-sonar.wav"
 const Tone1 = "/files/A-Tone-His_Self-1266414414.wav"
 
 func Boing() {
 	Play(MouthHarp)
 }
 
+func Chicken() {
+	Play(Chicken3)
+}
 func Klaxon() {
 	Play(Klaxon1)
 }
