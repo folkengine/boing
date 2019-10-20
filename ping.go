@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"log"
+	"math/rand"
 	"os"
 	"time"
 
@@ -12,7 +13,12 @@ import (
 	"github.com/faiface/beep/wav"
 )
 
+const Chickens = "files/chickens.wav"
+const Chicken2 = "files/chicken2.wav"
 const Chicken3 = "files/chicken_3.wav"
+const Chicken4 = "files/chicken_4.wav"
+const ChickensInBarn = "files/Chickens_in_Barn_02.wav"
+const Rooster = "files/384188__inspectorj__rooster-crowing-a_R.wav"
 const Klaxon1 = "files/danielnieto7__alert.wav"
 const MouthHarp = "files/juskiddink__boing.wav"
 const Sonar1 = "files/jillys-sonar.wav"
@@ -23,8 +29,13 @@ func Boing() {
 }
 
 func Chicken() {
-	Play(Chicken3)
+	Play(Chickens, Chicken2, Chicken3, Chicken4, ChickensInBarn, Rooster)
 }
+
+func Crow() {
+	Play(Rooster)
+}
+
 func Klaxon() {
 	Play(Klaxon1)
 }
@@ -58,7 +69,11 @@ func relativeFilePath(filename string) string {
 	return fmt.Sprintf("src/github.com/folkengine/boing/%s", filename)
 }
 
-func Play(wave string) {
+func Play(waves ...string) {
+
+	rand.Seed(time.Now().Unix())
+	wave := waves[rand.Intn(len(waves))]
+
 	f, err := FileInGoPath(relativeFilePath(wave))
 	if err != nil {
 		log.Fatal(err)
