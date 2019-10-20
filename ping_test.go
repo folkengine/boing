@@ -17,5 +17,11 @@ func TestPing(t *testing.T) {
 	})
 	t.Run("Chicken", func(t *testing.T) {
 		Chicken()
+		Play(Chickens)
+		Play(Chicken2)
+		Play(Chicken3)
+		Play(Chicken4)
+		Play(ChickensInBarn)
+		Play(Rooster)
 	})
 }
