@@ -15,4 +15,7 @@ func TestPing(t *testing.T) {
 	t.Run("Tone", func(t *testing.T) {
 		Tone()
 	})
+	t.Run("Chicken", func(t *testing.T) {
+		Chicken()
+	})
 }
