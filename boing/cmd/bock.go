@@ -8,11 +8,11 @@ import (
 
 // bockCmd represents the bock command
 var bockCmd = &cobra.Command{
-	Use:   "bock",
-	Short: "Bock Bock Bitches!make" +
+	Use:   "crow",
+	Short: "Good morning!!!" +
 		"",
 	Run: func(cmd *cobra.Command, args []string) {
-		boing.Chicken()
+		boing.Crow()
 	},
 }
 
