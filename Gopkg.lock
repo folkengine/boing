@@ -2,6 +2,14 @@
 
 
 [[projects]]
+  digest = "1:2ec67859562b5554e9f7f6ce7fef735c6a2bac434e6ac038c0b555568726a932"
+  name = "github.com/electronicpanopticon/gobrick"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "86765d4a6701b84033c9cfb8f4a5d3e5e65f0d7f"
+  version = "0.0.0"
+
+[[projects]]
   digest = "1:cef9d74e0c63556be3141f60548411dba5f6bba72d29f95924a96b737c5a7e31"
   name = "github.com/faiface/beep"
   packages = [
@@ -233,6 +241,7 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
+    "github.com/electronicpanopticon/gobrick",
     "github.com/faiface/beep",
     "github.com/faiface/beep/speaker",
     "github.com/faiface/beep/wav",

@@ -3,6 +3,7 @@ package boing
 import (
 	"errors"
 	"fmt"
+	"github.com/electronicpanopticon/gobrick"
 	"log"
 	"math/rand"
 	"os"
@@ -48,12 +49,10 @@ func Tone() {
 	Play(Tone1)
 }
 
+// TODO: Cleanup sig
 func FilePathInGoPath(relativePath string) (string, bool) {
-	env, hasGoPath := os.LookupEnv("GOPATH")
-	if !hasGoPath {
-		return "", hasGoPath
-	}
-	return fmt.Sprintf("%s/%s", env, relativePath), hasGoPath
+	gopath := gobrick.GetGOPATH()
+	return fmt.Sprintf("%s/%s", gopath, relativePath), true
 }
 
 func FileInGoPath(relativePath string) (*os.File, error) {
